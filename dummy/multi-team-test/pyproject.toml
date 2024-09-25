@@ -1,0 +1,34 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi_team_test"
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[project.scripts]
+multi-team-test = "multi_team_test.__main__:main"
+
+[tool.kedro]
+package_name = "multi_team_test"
+project_name = "multi_team_test"
+kedro_init_version = "0.19.8"
+tools = [ "Data Structure", "Kedro Viz",]
+example_pipeline = "False"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "multi_team_test.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "592d6d40352742239a8998cfd8c02dda"
