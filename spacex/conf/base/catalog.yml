@@ -1,0 +1,13 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+#
+# We support interacting with a variety of data stores including local file systems, cloud, network and HDFS
+
+
+
+spacex_launches:
+  type: kedro_datasets.api.APIDataset
+  url: "https://api.spacexdata.com/v4/launches"
+  method: GET  # Use GET method to fetch data
